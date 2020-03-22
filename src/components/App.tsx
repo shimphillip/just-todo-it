@@ -44,10 +44,10 @@ const App = () => {
           <Header addTodo={addTodo} />
           <div className="tasks">
             <Switch>
-              <Route path="/completed">
+              <Route exact path="/completed">
                 <CompletedTodoList todos={todos} toggleTodo={toggleTodo} />
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <TodoList todos={todos} toggleTodo={toggleTodo} />
               </Route>
             </Switch>

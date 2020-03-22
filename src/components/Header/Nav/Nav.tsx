@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import './Nav.scss';
 
 const Nav: React.FC = () => {
   return (
     <nav>
-      <Link to="/" className="nav-link">
+      <NavLink exact to="/" className="nav-link" activeClassName="nav-link--active">
         Incomplete Tasks
-      </Link>
-      <Link to="/completed" className="nav-link">
+      </NavLink>
+      <NavLink
+        exact to="/completed"
+        className="nav-link"
+        activeClassName="nav-link--active"
+      >
         Complete Tasks
-      </Link>
+      </NavLink>
     </nav>
   );
 };
