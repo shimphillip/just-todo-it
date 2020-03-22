@@ -17,7 +17,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo, complete }) => {
   );
 
   return (
-    <ul className="todos">
+    <ul className="tasks">
       {complete
         ? completedTodos.map(renderTodoItem)
         : incompleteTodos.map(renderTodoItem)}
