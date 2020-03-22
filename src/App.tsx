@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import TodoList from './components/TodoList/TodoList';
+import AddTodoForm from './components/AddTodoForm/AddTodoForm';
 
 const initialTodos: Array<Todo> = [
-  {
-    text: 'todo1',
-    complete: true,
-  },
-  {
-    text: 'todo2',
-    complete: false,
-  },
+  { text: 'Walk the dog', complete: true },
+  { text: 'Write app', complete: false },
 ];
 
-const App: React.FC = () => {
+function App() {
   const [todos, setTodos] = useState(initialTodos);
 
   const toggleTodo: ToggleTodo = selectedTodo => {
@@ -28,11 +23,23 @@ const App: React.FC = () => {
     setTodos(newTodos);
   };
 
+  const addTodo: AddTodo = newTodo => {
+    newTodo.trim() !== '' &&
+      setTodos([
+        ...todos,
+        {
+          text: newTodo,
+          complete: false,
+        },
+      ]);
+  };
+
   return (
-    <div className="App">
+    <>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-    </div>
+      <AddTodoForm addTodo={addTodo} />
+    </>
   );
-};
+}
 
 export default App;
