@@ -41,7 +41,7 @@ const App = () => {
     <Router>
       <div>
         <div className="container">
-          <Header addTodo={addTodo} />
+          <Header todos={todos} addTodo={addTodo} />
           <div className="tasks">
             <Switch>
               <Route exact path="/completed">
