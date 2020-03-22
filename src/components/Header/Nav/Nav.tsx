@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './Nav.scss';
 
 const Nav: React.FC = () => {
   return (
     <nav>
-      <a href="/" className="nav-link">
+      <Link to="/" className="nav-link">
         Incomplete Tasks
-      </a>
-      <a href="/" className="nav-link">
+      </Link>
+      <Link to="/completed" className="nav-link">
         Complete Tasks
-      </a>
+      </Link>
     </nav>
   );
 };

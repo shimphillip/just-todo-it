@@ -1,16 +1,19 @@
 import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
-interface TodoListProps {
+interface CompletedTodoListProps {
   todos: Array<Todo>;
   toggleTodo: ToggleTodo;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
+const CompletedTodoList: React.FC<CompletedTodoListProps> = ({
+  todos,
+  toggleTodo,
+}) => {
   return (
     <ul>
       {todos
-        .filter(todo => todo.complete === false)
+        .filter(todo => todo.complete === true)
         .map(todo => (
           <TodoItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
         ))}
@@ -18,4 +21,4 @@ const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
   );
 };
 
-export default TodoList;
+export default CompletedTodoList;
