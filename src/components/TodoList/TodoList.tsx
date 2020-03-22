@@ -3,13 +3,14 @@ import TodoItem from '../TodoItem/TodoItem';
 
 interface TodoListProps {
   todos: Array<Todo>;
+  toggleTodo: ToggleTodo;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
   return (
     <ul>
       {todos.map(todo => (
-        <TodoItem key={todo.text} todo={todo} />
+        <TodoItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
       ))}
     </ul>
   );

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TodoList from './components/TodoList/TodoList';
 
-const todos: Array<Todo> = [
+const initialTodos: Array<Todo> = [
   {
     text: 'todo1',
     complete: true,
@@ -12,12 +12,27 @@ const todos: Array<Todo> = [
   },
 ];
 
-function App() {
+const App: React.FC = () => {
+  const [todos, setTodos] = useState(initialTodos);
+
+  const toggleTodo: ToggleTodo = selectedTodo => {
+    const newTodos = todos.map(todo => {
+      if (todo === selectedTodo) {
+        return {
+          ...todo,
+          complete: !todo.complete,
+        };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+
   return (
     <div className="App">
-      <TodoList todos={todos} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
     </div>
   );
-}
+};
 
 export default App;
