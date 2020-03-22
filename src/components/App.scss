@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+.blue {
+  color: #61dbfb;
+  text-decoration: underline;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 550px;
+  background-color: #393f49;
+  border-radius: 5px;
+  padding: 4rem;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+}

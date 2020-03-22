@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import TodoList from './components/TodoList/TodoList';
-import AddTodoForm from './components/AddTodoForm/AddTodoForm';
+import Header from './Header/Header'
+import TodoList from './TodoList/TodoList';
+import './App.scss';
 
 const initialTodos: Array<Todo> = [
   { text: 'Walk the dog', complete: true },
   { text: 'Write app', complete: false },
 ];
 
-function App() {
+const App = () => {
   const [todos, setTodos] = useState(initialTodos);
 
   const toggleTodo: ToggleTodo = selectedTodo => {
@@ -35,11 +36,15 @@ function App() {
   };
 
   return (
-    <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <AddTodoForm addTodo={addTodo} />
-    </>
+    <div className="container">
+      <div className="header">
+        <Header addTodo={addTodo}/>
+      </div>
+      <div className="tasks">
+        <TodoList todos={todos} toggleTodo={toggleTodo} />
+      </div>
+    </div>
   );
-}
+};
 
 export default App;

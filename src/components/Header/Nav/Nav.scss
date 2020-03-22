@@ -1,0 +1,16 @@
+nav {
+  .nav-link {
+    font-size: 1.6rem;
+    color: #8d9196;
+    text-decoration: none;
+    margin-right: 5rem;
+
+    &--active {
+      color: white;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
