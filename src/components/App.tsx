@@ -3,7 +3,6 @@ import Header from './Header/Header';
 import TodoList from './TodoList/TodoList';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import CompletedTodoList from './TodoList/CompletedTodoList';
 
 const initialTodos: Array<Todo> = [
   { text: 'Walk the dog', complete: true },
@@ -45,10 +44,10 @@ const App = () => {
           <div className="tasks">
             <Switch>
               <Route exact path="/completed">
-                <CompletedTodoList todos={todos} toggleTodo={toggleTodo} />
+                <TodoList todos={todos} toggleTodo={toggleTodo} complete={true}/>
               </Route>
               <Route exact path="/">
-                <TodoList todos={todos} toggleTodo={toggleTodo} />
+                <TodoList todos={todos} toggleTodo={toggleTodo} complete={false}/>
               </Route>
             </Switch>
           </div>
