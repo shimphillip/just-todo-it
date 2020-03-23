@@ -5,15 +5,26 @@ import './TodoList.scss';
 interface TodoListProps {
   todos: Array<Todo>;
   toggleTodo: ToggleTodo;
+  deleteTodo: DeleteTodo;
   complete: boolean;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo, complete }) => {
+const TodoList: React.FC<TodoListProps> = ({
+  todos,
+  toggleTodo,
+  deleteTodo,
+  complete,
+}) => {
   const completedTodos = todos.filter(todo => todo.complete);
   const incompleteTodos = todos.filter(todo => !todo.complete);
 
   const renderTodoItem = (todo: Todo) => (
-    <TodoItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
+    <TodoItem
+      key={todo.text}
+      todo={todo}
+      toggleTodo={toggleTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 
   return (

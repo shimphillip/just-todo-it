@@ -6,21 +6,17 @@ import { ReactComponent as GarbageCan } from '../../assets/trash.svg';
 interface TodoItemProps {
   todo: Todo;
   toggleTodo: ToggleTodo;
+  deleteTodo: DeleteTodo;
 }
 
-const Todo: React.FC<TodoItemProps> = ({ todo, toggleTodo }) => {
+const Todo: React.FC<TodoItemProps> = ({ todo, toggleTodo, deleteTodo }) => {
   return (
     <div className="task">
-      <CheckBox width={20} height={20} />
-      <label className={todo.complete ? 'complete' : undefined}>
-        <input
-          type="checkbox"
-          checked={todo.complete}
-          onChange={() => toggleTodo(todo)}
-        />
+      <div className="toggle-box" onClick={() => toggleTodo(todo)}>
+        <CheckBox className="check-box" />
         <p className="text">{todo.text}</p>
-      </label>{' '}
-      <GarbageCan width={20} height={20} />
+      </div>
+      <GarbageCan className="garbage-can" onClick={() => deleteTodo(todo)} />
     </div>
   );
 };

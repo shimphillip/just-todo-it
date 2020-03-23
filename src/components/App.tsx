@@ -36,6 +36,11 @@ const App = () => {
       ]);
   };
 
+  const deleteTodo: DeleteTodo = selectedTodo => {
+    const filteredTodos = todos.filter(todo => todo !== selectedTodo);
+    setTodos(filteredTodos);
+  };
+
   return (
     <Router>
       <div>
@@ -44,10 +49,20 @@ const App = () => {
           <div className="tasks">
             <Switch>
               <Route exact path="/completed">
-                <TodoList todos={todos} toggleTodo={toggleTodo} complete={true}/>
+                <TodoList
+                  todos={todos}
+                  toggleTodo={toggleTodo}
+                  deleteTodo={deleteTodo}
+                  complete={true}
+                />
               </Route>
               <Route exact path="/">
-                <TodoList todos={todos} toggleTodo={toggleTodo} complete={false}/>
+                <TodoList
+                  todos={todos}
+                  toggleTodo={toggleTodo}
+                  deleteTodo={deleteTodo}
+                  complete={false}
+                />
               </Route>
             </Switch>
           </div>
