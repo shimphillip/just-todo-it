@@ -25,8 +25,9 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
         placeholder="Enter a task..."
         value={newTodo}
         onChange={handleChange}
+        data-testid='form-input'
       />
-      <button type="submit" onClick={handleSubmit}>
+      <button type="submit" onClick={handleSubmit} data-testid='submit-button'>
         Add Todo
       </button>
     </form>

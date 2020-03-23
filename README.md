@@ -1,3 +1,7 @@
+Design inspiration by
+
+https://dribbble.com/shots/6570568-Todo-List-App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

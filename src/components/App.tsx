@@ -22,23 +22,27 @@ const App = () => {
       }
       return todo;
     });
+
     setTodos(newTodos);
   };
 
   const addTodo: AddTodo = newTodo => {
-    newTodo.trim() !== '' &&
-      setTodos([
-        ...todos,
-        {
-          text: newTodo,
-          complete: false,
-        },
-      ]);
+    if (newTodo.trim() === '') return false;
+
+    const newTodos = [
+      ...todos,
+      {
+        text: newTodo,
+        complete: false,
+      },
+    ];
+
+    setTodos(newTodos);
   };
 
   const deleteTodo: DeleteTodo = selectedTodo => {
-    const filteredTodos = todos.filter(todo => todo !== selectedTodo);
-    setTodos(filteredTodos);
+    const newTodos = todos.filter(todo => todo !== selectedTodo);
+    setTodos(newTodos);
   };
 
   return (
