@@ -8,36 +8,38 @@
     border-top: none;
   }
 
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin-right: 20px;
+  }
+
   .toggle-box {
     flex-basis: 90%;
     display: flex;
     align-items: center;
     cursor: pointer;
 
-    .check-box {
-      width: 24px;
-      height: 24px;
-      margin-right: 20px;
-      fill: white;
-    }
-
     .text {
       display: inline-block;
       color: white;
       font-size: 1.6rem;
       line-height: 1.5;
+
+      &--complete {
+        text-decoration: line-through;
+      }
     }
 
-    &:hover .check-box {
+    &:hover .icon {
       fill: green;
     }
   }
 
   .garbage-can {
     flex-basis: 10%;
-    width: 24px;
-    height: 24px;
-    fill: white;
+    margin-right: 0;
     cursor: pointer;
 
     &:hover {

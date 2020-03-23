@@ -2,6 +2,7 @@ import React from 'react';
 import './TodoItem.scss';
 import { ReactComponent as CheckBox } from '../../assets/tick.svg';
 import { ReactComponent as GarbageCan } from '../../assets/trash.svg';
+import { ReactComponent as Rewind } from '../../assets/rewind.svg';
 
 interface TodoItemProps {
   todo: Todo;
@@ -13,10 +14,19 @@ const Todo: React.FC<TodoItemProps> = ({ todo, toggleTodo, deleteTodo }) => {
   return (
     <div className="task">
       <div className="toggle-box" onClick={() => toggleTodo(todo)}>
-        <CheckBox className="check-box" />
-        <p className="text">{todo.text}</p>
+        {todo.complete ? (
+          <Rewind className="icon" />
+        ) : (
+          <CheckBox className="icon" />
+        )}
+        <p className={`text ${todo.complete && 'text--complete'}`}>
+          {todo.text}
+        </p>
       </div>
-      <GarbageCan className="garbage-can" onClick={() => deleteTodo(todo)} />
+      <GarbageCan
+        className="icon garbage-can"
+        onClick={() => deleteTodo(todo)}
+      />
     </div>
   );
 };
