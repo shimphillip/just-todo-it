@@ -26,6 +26,7 @@ const Todo: React.FC<TodoItemProps> = ({ todo, toggleTodo, deleteTodo }) => {
       <GarbageCan
         className="icon garbage-can"
         onClick={() => deleteTodo(todo)}
+        data-testid='deleteTodo'
       />
     </div>
   );
