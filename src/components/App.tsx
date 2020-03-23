@@ -43,7 +43,16 @@ const App = () => {
 
   return (
     <Router>
-      <div>
+      <div className="center">
+        <div className="introduction">
+          <h1>
+            JUST DO IT
+            <span aria-label="Check mark" role="img">
+              ✔
+            </span>
+          </h1>
+          <div className="theme-toggler">theme toggler</div>
+        </div>
         <div className="container">
           <Header todos={todos} addTodo={addTodo} />
           <div className="tasks">

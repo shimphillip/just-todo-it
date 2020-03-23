@@ -8,24 +8,65 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Quicksand', 'Inter', sans-serif;
   box-sizing: border-box;
 }
 
-.blue {
-  color: #61dbfb;
-  text-decoration: underline;
+// dont put fonts in public folder, doesn't support hashing
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: bold;
+  src: local('Quicksand'), url(../fonts/Quicksand-Bold.ttf) format('truetype');
 }
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 850px;
-  height: 550px;
-  background-color: #393f49;
-  border-radius: 5px;
-  padding: 4rem;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: normal;
+  src: local('Quicksand'),
+    url(../fonts/Quicksand-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  src: local('Quicksand'), url(../fonts/Quicksand-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: normal;
+  src: local('OpenSans'), url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(../fonts/OpenSans-Italic.ttf) format('truetype');
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .introduction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 850px;
+    margin: 3rem 0;
+
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 5rem;
+    }
+  }
+
+  .container {
+    width: 850px;
+    height: 550px;
+    background-color: #393f49;
+    border-radius: 5px;
+    padding: 4rem;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+  }
 }
