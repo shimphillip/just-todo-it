@@ -1,6 +1,10 @@
 {
   "name": "just-do-it",
-  "version": "0.1.0",
+  "author": "Phillip Shim",
+  "homepage": "https://github.com/shimphillip/just-do-it",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A todo app built with typescript",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
