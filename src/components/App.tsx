@@ -4,8 +4,8 @@ import TodoList from './TodoList/TodoList';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ToggleTheme from './ToggleTheme/ToggleTheme';
+import Footer from './Footer/Footer';
 
-// this is where you can update initial todos
 const initialTodos: Array<Todo> = [
   { text: 'Walk the dog', complete: true },
   { text: 'Write app', complete: false },
@@ -63,18 +63,18 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
   };
 
   return (
-    <Router>
-      <div className="center">
-        <div className="introduction">
-          <h1>
-            JUST DO IT
-            <span aria-label="Check mark" role="img">
-              ✔
-            </span>
-          </h1>
-          <ToggleTheme darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        </div>
-        <div className="container">
+    <div className="wrapper">
+      <div className="introduction">
+        <h1>
+          Just DO IT
+          <span aria-label="Check mark" role="img">
+            ✔
+          </span>
+        </h1>
+        <ToggleTheme darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      </div>
+      <div className="container">
+        <Router>
           <Header todos={todos} addTodo={addTodo} />
           <div className="tasks">
             <Switch>
@@ -96,9 +96,10 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
               </Route>
             </Switch>
           </div>
-        </div>
+        </Router>
       </div>
-    </Router>
+      <Footer />
+    </div>
   );
 };
 

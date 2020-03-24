@@ -6,7 +6,7 @@
   --success-color: green;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --primary-color: white;
   --secondary-color: #61dbfb;
   --tertiary-color: #393f49;
@@ -57,7 +57,7 @@ html {
   src: local('OpenSans'), url(../fonts/OpenSans-Italic.ttf) format('truetype');
 }
 
-.center {
+.wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -72,6 +72,7 @@ html {
     h1 {
       font-family: 'Open Sans', sans-serif;
       font-size: 5rem;
+      word-spacing: 3px;
     }
   }
 
