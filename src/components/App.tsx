@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import TodoList from './TodoList/TodoList';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ToggleTheme from './ToggleTheme/ToggleTheme';
 
 // this is where you can update initial todos
 const initialTodos: Array<Todo> = [
@@ -11,11 +12,12 @@ const initialTodos: Array<Todo> = [
 ];
 
 interface AppProps {
-  initialTodosImport: Array<Todo>;
+  initialTodosImport?: Array<Todo>;
 }
 
 const App: React.FC<AppProps> = ({ initialTodosImport }) => {
   const [todos, setTodos] = useState(initialTodosImport || initialTodos);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleTodo: ToggleTodo = selectedTodo => {
     const newTodos = todos.map(todo => {
@@ -50,6 +52,16 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
     setTodos(newTodos);
   };
 
+  const toggleDarkMode = () => {
+    if (darkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    setDarkMode(!darkMode);
+  };
+
   return (
     <Router>
       <div className="center">
@@ -60,7 +72,7 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
               ✔
             </span>
           </h1>
-          <div className="theme-toggler">theme toggler</div>
+          <ToggleTheme darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </div>
         <div className="container">
           <Header todos={todos} addTodo={addTodo} />

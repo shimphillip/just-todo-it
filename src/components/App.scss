@@ -1,3 +1,17 @@
+:root {
+  --primary-color: #393f49;
+  --secondary-color: #61dbfb;
+  --tertiary-color: white;
+  --danger-color: red;
+  --success-color: green;
+}
+
+[data-theme="dark"] {
+  --primary-color: white;
+  --secondary-color: #61dbfb;
+  --tertiary-color: #393f49;
+}
+
 *,
 *::before,
 *::after {
@@ -64,7 +78,7 @@ html {
   .container {
     width: 850px;
     height: 550px;
-    background-color: #393f49;
+    background-color: var(--primary-color);
     border-radius: 5px;
     padding: 4rem;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);

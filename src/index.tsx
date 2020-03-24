@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import { testTodos as initialTodosImport } from './fixtureTestData';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App initialTodosImport={initialTodosImport} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
