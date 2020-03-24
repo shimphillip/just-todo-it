@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from '../TodoItem/TodoItem';
+import TodoItem from '../TodoItem';
 import './TodoList.scss';
 
 interface TodoListProps {
@@ -28,7 +28,7 @@ const TodoList: React.FC<TodoListProps> = ({
   );
 
   return (
-    <ul className="tasks" data-testid='tasks'>
+    <ul className="tasks" data-testid="tasks">
       {complete
         ? completedTodos.map(renderTodoItem)
         : incompleteTodos.map(renderTodoItem)}

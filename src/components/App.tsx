@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from './Header/Header';
-import TodoList from './TodoList/TodoList';
+import Header from './Header';
+import TodoList from './TodoList';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ToggleTheme from './ToggleTheme/ToggleTheme';
-import Footer from './Footer/Footer';
+import ToggleTheme from './ToggleTheme';
+import Footer from './Footer';
 
 const initialTodos: Array<Todo> = [
   { text: 'Walk the dog', complete: true },
