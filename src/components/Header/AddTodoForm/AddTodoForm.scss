@@ -8,6 +8,10 @@ form {
     border-radius: 3px;
     font-size: 1.4rem;
     width: 350px;
+
+    &::placeholder {
+      color: var(--tertiary-color);
+    }
   }
 
   button {
