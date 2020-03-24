@@ -1,3 +1,3 @@
-import AddTodoForm from './AddTodoForm';
+import AddTodoForm from './AddTodoForm'
 
-export default AddTodoForm;
+export default AddTodoForm

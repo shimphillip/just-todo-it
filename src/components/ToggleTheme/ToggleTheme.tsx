@@ -1,9 +1,9 @@
-import React from 'react';
-import './ToggleTheme.scss';
+import React from 'react'
+import './ToggleTheme.scss'
 
 interface ToggleThemeProps {
-  toggleDarkMode: ToggleDarkMode;
-  darkMode: boolean;
+  toggleDarkMode: ToggleDarkMode
+  darkMode: boolean
 }
 
 const ToggleTheme: React.FC<ToggleThemeProps> = ({
@@ -21,7 +21,7 @@ const ToggleTheme: React.FC<ToggleThemeProps> = ({
     >
       Light
     </div>
-  );
-};
+  )
+}
 
-export default ToggleTheme;
+export default ToggleTheme

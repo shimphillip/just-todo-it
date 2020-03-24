@@ -1,14 +1,14 @@
-import React from 'react';
-import './Status.scss';
+import React from 'react'
+import './Status.scss'
 
 interface StatusProps {
-  todos: Array<Todo>;
+  todos: Array<Todo>
 }
 
 const Status: React.FC<StatusProps> = ({ todos }) => {
-  const activeTodos = todos.filter(todo => !todo.complete);
+  const activeTodos = todos.filter(todo => !todo.complete)
 
-  return <p className="status">{activeTodos.length} Active Tasks</p>;
-};
+  return <p className="status">{activeTodos.length} Active Tasks</p>
+}
 
-export default Status;
+export default Status

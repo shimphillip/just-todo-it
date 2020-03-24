@@ -1,12 +1,12 @@
 type Todo = {
-  text: string;
-  complete: boolean;
-};
+  text: string
+  complete: boolean
+}
 
-type ToggleTodo = (selectedTodo: Todo) => void;
+type ToggleTodo = (selectedTodo: Todo) => void
 
-type AddTodo = (newTodo: string) => void;
+type AddTodo = (newTodo: string) => void
 
-type DeleteTodo = (selectedTodo: Todo) => void;
+type DeleteTodo = (selectedTodo: Todo) => void
 
-type ToggleDarkMode = () => void;
+type ToggleDarkMode = () => void

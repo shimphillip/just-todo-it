@@ -1,13 +1,13 @@
-import React from 'react';
-import Moment from 'react-moment';
-import Nav from './Nav';
-import Status from './Status';
-import AddTodoForm from './AddTodoForm';
-import './Header.scss';
+import React from 'react'
+import Moment from 'react-moment'
+import Nav from './Nav'
+import Status from './Status'
+import AddTodoForm from './AddTodoForm'
+import './Header.scss'
 
 interface HeaderProps {
-  addTodo: AddTodo;
-  todos: Array<Todo>;
+  addTodo: AddTodo
+  todos: Array<Todo>
 }
 
 const Header: React.FC<HeaderProps> = ({ todos, addTodo }) => {
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ todos, addTodo }) => {
       </div>
       <Nav />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

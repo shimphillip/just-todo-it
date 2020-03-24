@@ -1,12 +1,12 @@
-import React from 'react';
-import TodoItem from '../TodoItem';
-import './TodoList.scss';
+import React from 'react'
+import TodoItem from './TodoItem'
+import './TodoList.scss'
 
 interface TodoListProps {
-  todos: Array<Todo>;
-  toggleTodo: ToggleTodo;
-  deleteTodo: DeleteTodo;
-  complete: boolean;
+  todos: Array<Todo>
+  toggleTodo: ToggleTodo
+  deleteTodo: DeleteTodo
+  complete: boolean
 }
 
 const TodoList: React.FC<TodoListProps> = ({
@@ -15,8 +15,8 @@ const TodoList: React.FC<TodoListProps> = ({
   deleteTodo,
   complete,
 }) => {
-  const completedTodos = todos.filter(todo => todo.complete);
-  const incompleteTodos = todos.filter(todo => !todo.complete);
+  const completedTodos = todos.filter(todo => todo.complete)
+  const incompleteTodos = todos.filter(todo => !todo.complete)
 
   const renderTodoItem = (todo: Todo) => (
     <TodoItem
@@ -25,7 +25,7 @@ const TodoList: React.FC<TodoListProps> = ({
       toggleTodo={toggleTodo}
       deleteTodo={deleteTodo}
     />
-  );
+  )
 
   return (
     <ul className="tasks" data-testid="tasks">
@@ -33,7 +33,7 @@ const TodoList: React.FC<TodoListProps> = ({
         ? completedTodos.map(renderTodoItem)
         : incompleteTodos.map(renderTodoItem)}
     </ul>
-  );
-};
+  )
+}
 
-export default TodoList;
+export default TodoList

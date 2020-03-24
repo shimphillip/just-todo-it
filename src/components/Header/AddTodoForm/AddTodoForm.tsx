@@ -1,22 +1,22 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import './AddTodoForm.scss';
+import React, { useState, ChangeEvent, FormEvent } from 'react'
+import './AddTodoForm.scss'
 
 interface AddTodoFormProps {
-  addTodo: AddTodo;
+  addTodo: AddTodo
 }
 
 const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
-  const [newTodo, setNewTodo] = useState('');
+  const [newTodo, setNewTodo] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setNewTodo(e.target.value);
-  };
+    setNewTodo(e.target.value)
+  }
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    addTodo(newTodo);
-    setNewTodo('');
-  };
+    e.preventDefault()
+    addTodo(newTodo)
+    setNewTodo('')
+  }
 
   return (
     <form>
@@ -25,13 +25,13 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
         placeholder="Enter a task..."
         value={newTodo}
         onChange={handleChange}
-        data-testid='form-input'
+        data-testid="form-input"
       />
-      <button type="submit" onClick={handleSubmit} data-testid='submit-button'>
+      <button type="submit" onClick={handleSubmit} data-testid="submit-button">
         Add Todo
       </button>
     </form>
-  );
-};
+  )
+}
 
-export default AddTodoForm;
+export default AddTodoForm

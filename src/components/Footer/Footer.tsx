@@ -1,5 +1,5 @@
-import React from 'react';
-import './Footer.scss';
+import React from 'react'
+import './Footer.scss'
 
 const Footer = () => (
   <footer>
@@ -20,6 +20,6 @@ const Footer = () => (
       Github
     </a>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import TodoList from './TodoList';
-import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ToggleTheme from './ToggleTheme';
-import Footer from './Footer';
+import React, { useState } from 'react'
+import Header from './Header'
+import TodoList from './TodoList'
+import './App.scss'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ToggleTheme from './ToggleTheme'
+import Footer from './Footer'
 
 const initialTodos: Array<Todo> = [
   { text: 'Walk the dog', complete: true },
   { text: 'Write app', complete: false },
-];
+]
 
 interface AppProps {
-  initialTodosImport?: Array<Todo>;
+  initialTodosImport?: Array<Todo>
 }
 
 const App: React.FC<AppProps> = ({ initialTodosImport }) => {
-  const [todos, setTodos] = useState(initialTodosImport || initialTodos);
-  const [darkMode, setDarkMode] = useState(true);
+  const [todos, setTodos] = useState(initialTodosImport || initialTodos)
+  const [darkMode, setDarkMode] = useState(true)
 
   const toggleTodo: ToggleTodo = selectedTodo => {
     const newTodos = todos.map(todo => {
@@ -25,16 +25,16 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
         return {
           ...todo,
           complete: !todo.complete,
-        };
+        }
       }
-      return todo;
-    });
+      return todo
+    })
 
-    setTodos(newTodos);
-  };
+    setTodos(newTodos)
+  }
 
   const addTodo: AddTodo = newTodo => {
-    if (newTodo.trim() === '') return false;
+    if (newTodo.trim() === '') return false
 
     const newTodos = [
       ...todos,
@@ -42,25 +42,25 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
         text: newTodo,
         complete: false,
       },
-    ];
+    ]
 
-    setTodos(newTodos);
-  };
+    setTodos(newTodos)
+  }
 
   const deleteTodo: DeleteTodo = selectedTodo => {
-    const newTodos = todos.filter(todo => todo !== selectedTodo);
-    setTodos(newTodos);
-  };
+    const newTodos = todos.filter(todo => todo !== selectedTodo)
+    setTodos(newTodos)
+  }
 
   const toggleDarkMode = () => {
     if (darkMode) {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark')
     } else {
-      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-theme', 'light')
     }
 
-    setDarkMode(!darkMode);
-  };
+    setDarkMode(!darkMode)
+  }
 
   return (
     <div className="wrapper">
@@ -100,7 +100,7 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
