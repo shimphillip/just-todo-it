@@ -66,7 +66,7 @@ const App: React.FC<AppProps> = ({ initialTodosImport }) => {
     <div className="wrapper">
       <div className="introduction">
         <h1>
-          Just DO IT
+          Just TODO IT
           <span aria-label="Check mark" role="img">
             ✔
           </span>
