@@ -65,4 +65,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Design inspiration at [Dribble](https://dribbble.com/shots/6570568-Todo-List-App)
-* Icons made by Freepik from [flaticon](ttps://www.flaticon.com/)
+* Icons made by Freepik from [flaticon](https://www.flaticon.com/)
