@@ -7,8 +7,9 @@ import ToggleTheme from './ToggleTheme'
 import Footer from './Footer'
 
 const initialTodos: Array<Todo> = [
-  { text: 'Walk the dog', complete: true },
-  { text: 'Write app', complete: false },
+  { text: 'Learn React', complete: true },
+  { text: 'Walk your dog', complete: true },
+  { text: 'Learn GraphQL', complete: false },
 ]
 
 interface AppProps {
