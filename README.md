@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/269d976f-916e-4d8e-bf6d-543af80892d8/deploy-status)](https://app.netlify.com/sites/just-todo-it/deploys)
 
-![screenshot]('./docs/screenshot.png')
+![screenshot](./docs/screenshot.png)
 
 ## Getting Started
 
