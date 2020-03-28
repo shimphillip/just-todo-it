@@ -40,9 +40,9 @@ Easy deployment with netlify :)
 
 ## Built With
 
-* [Typescript](http://www.dropwizard.io/1.0.2/docs/) - Superset of JavaScript with types
-* [React](https://maven.apache.org/) - UI library
-* [SCSS](https://rometools.github.io/rome/) - Preprocessor and an extension of css
+* [Typescript](https://www.typescriptlang.org/) - Superset of JavaScript with types
+* [React](https://reactjs.org/) - UI library
+* [SCSS](https://sass-lang.com/) - Preprocessor and an extension of css
 
 ## Contributing
 
